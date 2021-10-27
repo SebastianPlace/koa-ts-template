@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "compile-check": "tsc --pretty --noEmit",
     "dev": "ts-node src/index.ts",
     "lint": "eslint --fix ./src/** --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --write './src/**/*.{ts,tsx,js,jsx}'"
