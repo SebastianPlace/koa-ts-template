@@ -1,23 +1,23 @@
-import Koa, { Context } from "koa";
-import bodyParser from "koa-body";
-import logger from "koa-logger";
-import Router from "koa-router";
+import Koa, { Context } from 'koa'
+import bodyParser from 'koa-body'
+import logger from 'koa-logger'
+import Router from 'koa-router'
 
-import config from "./config";
+import config from './config'
 
-const app = new Koa();
-const router = new Router();
+const app = new Koa()
+const router = new Router()
 
 const healthHandler = (ctx: Context) => {
-  ctx.body = { ok: true };
-};
+  ctx.body = { ok: true }
+}
 
-router.get("/healthz", healthHandler);
+router.get('/healthz', healthHandler)
 
-app.use(bodyParser());
-app.use(logger());
-app.use(router.routes()).use(router.allowedMethods());
+app.use(bodyParser())
+app.use(logger())
+app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(config.API_PORT, () => {
-  console.info(`App listening on port ${config.API_PORT}...`);
-});
+  console.info(`App listening on port ${config.API_PORT}...`)
+})
