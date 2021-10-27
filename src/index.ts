@@ -2,7 +2,6 @@ import Koa, { Context } from 'koa'
 import bodyParser from 'koa-body'
 import logger from 'koa-logger'
 import Router from 'koa-router'
-
 import config from './config'
 
 const app = new Koa()
