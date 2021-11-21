@@ -13,8 +13,8 @@ const healthHandler = (ctx: Context) => {
 
 router.get('/healthz', healthHandler)
 
-app.use(bodyParser())
 app.use(logger())
+app.use(bodyParser())
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(config.API_PORT, () => {
